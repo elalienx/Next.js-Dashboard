@@ -11,7 +11,10 @@ import CardsWrapper from "@/app/ui/dashboard/cards";
 export default async function Page() {
   return (
     <main>
+      {/* Static */}
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>Dashboard</h1>
+
+      {/* Dynamic */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <Suspense fallback={<CardsSkeleton />}>
           <CardsWrapper />
