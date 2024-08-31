@@ -16,7 +16,7 @@ export default async function Page() {
    * 🛠️ Fix:
    * By using Promise.all() we can run them concurrently.
    * */
-  const getRevenue = fetchRevenue();
+  const getRevenue = fetchRevenue(); // this is the slow fetch 🐢
   const getLatestInvoices = fetchLatestInvoices();
   const getCards = fetchCardData();
 
