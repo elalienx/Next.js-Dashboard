@@ -22,14 +22,16 @@ export default function EditInvoiceForm({ invoice, customers }: Props) {
 
   return (
     <form action={updateInvoiceWithId}>
-      {/* Customer Name */}
-      <h2>{customer?.name || "Ups!"}</h2>
-
-      {/* Editable fields */}
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
-        {/* Customer Id (invisible but required for updating the form) */}
-        <div className="mb-4">
-          <input id="customerId" defaultValue={customer?.id} />
+        {/* Name */}
+        <header className="mb-4">
+          <h2>{customer?.name || "Ups!"}</h2>
+        </header>
+
+        {/* Editable fields */}
+        {/* Customer Name (hidden, required so the server actions knows the customer_id) */}
+        <div className="mb-4" hidden>
+          <input type="text" id="customer" name="customerId" defaultValue={invoice.customer_id} />
         </div>
 
         {/* Invoice Amount */}
