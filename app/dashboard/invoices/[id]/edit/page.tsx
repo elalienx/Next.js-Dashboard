@@ -8,7 +8,7 @@ import Breadcrumbs from "@/app/ui/invoices/breadcrumbs";
 import { fetchInvoiceById, fetchCustomers } from "@/app/lib/data";
 
 export const metadata: Metadata = {
-  title: "Edit invoice",
+  title: "Edit Invoice",
 };
 
 interface Props {

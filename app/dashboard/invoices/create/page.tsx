@@ -8,7 +8,7 @@ import { fetchCustomers } from "@/app/lib/data";
 import breadcrumbNavigation from "./breadcumb-navigation.json";
 
 export const metadata: Metadata = {
-  title: "Create invoice",
+  title: "Create Invoice",
 };
 
 export default async function Page() {
