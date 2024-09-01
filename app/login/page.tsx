@@ -6,7 +6,7 @@ import AcmeLogo from "@/app/ui/acme-logo";
 import LoginForm from "@/app/ui/login-form";
 
 export const metadata: Metadata = {
-  title: "Login Auth | Acme Dashboard",
+  title: "Login Auth with Env vars | Acme Dashboard",
 };
 
 export default function LoginPage() {
