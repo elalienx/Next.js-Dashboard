@@ -4,9 +4,10 @@
 import Link from "next/link";
 import { CheckIcon, ClockIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 import { CurrencyDollarIcon } from "@heroicons/react/24/outline";
+import { useActionState } from "react";
 
 // Project files
-import { updateInvoice } from "@/app/lib/actions";
+import { updateInvoice, State } from "@/app/lib/actions";
 import { CustomerField, InvoiceForm } from "@/app/lib/definitions";
 import { Button } from "@/app/ui/button";
 
@@ -18,10 +19,12 @@ interface Props {
 export default function EditInvoiceForm({ invoice, customers }: Props) {
   // Properties
   const customer = customers.find((item) => item.id === invoice.customer_id);
+  const initialState: State = { message: null, errors: {} };
   const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
+  const [state, formAction] = useActionState(updateInvoiceWithId, initialState);
 
   return (
-    <form action={updateInvoiceWithId}>
+    <form action={formAction}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Name */}
         <header className="mb-4">
