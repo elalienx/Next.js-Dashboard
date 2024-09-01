@@ -2,9 +2,9 @@
 
 This is the default tutorial project of Next.js ([link](https://nextjs.org/learn/dashboard-app)), covering basics like image and font optimization before diving into React’s latest server-side practices.
 
-## View demo
+## Live demo
 To view the demo:
-1. Enter this site: (Dashboard)[https://nextjs-dashboard-beta-topaz-74.vercel.app/]
+1. Enter this site: [Dashboard](https://nextjs-dashboard-beta-topaz-74.vercel.app/)
 2. Login this email and password: `user@nextmail.com` and `123456`
 
 ## Learnings
