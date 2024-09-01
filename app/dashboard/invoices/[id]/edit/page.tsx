@@ -1,6 +1,7 @@
 import EditForm from "@/app/ui/invoices/edit-form";
 import Breadcrumbs from "@/app/ui/invoices/breadcrumbs";
 import { fetchInvoiceById, fetchCustomers } from "@/app/lib/data";
+import { notFound } from "next/navigation";
 
 interface Props {
   params: {
@@ -24,6 +25,9 @@ export default async function Page({ params }: Props) {
       active: true,
     },
   ];
+
+  // Safeguard
+  if (!invoice) notFound();
 
   return (
     <main>
