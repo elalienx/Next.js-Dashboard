@@ -1,0 +1,12 @@
+[
+  {
+    "label": "Invoices",
+    "href": "/dashboard/invoices",
+    "active": false
+  },
+  {
+    "label": "Create Invoice",
+    "href": "/dashboard/invoices/create",
+    "active": true
+  }
+]

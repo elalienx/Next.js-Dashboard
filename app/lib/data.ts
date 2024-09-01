@@ -76,9 +76,8 @@ export async function fetchCardData() {
   }
 }
 
-const ITEMS_PER_PAGE = 6;
-export async function fetchFilteredInvoices(query: string, currentPage: number) {
-  const offset = (currentPage - 1) * ITEMS_PER_PAGE;
+export async function fetchFilteredInvoices(query: string, currentPage: number, itemsPerPage = 6) {
+  const offset = (currentPage - 1) * itemsPerPage;
 
   try {
     const invoices = await sql<InvoicesTable>`
@@ -99,7 +98,7 @@ export async function fetchFilteredInvoices(query: string, currentPage: number) 
         invoices.date::text ILIKE ${`%${query}%`} OR
         invoices.status ILIKE ${`%${query}%`}
       ORDER BY invoices.date DESC
-      LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
+      LIMIT ${itemsPerPage} OFFSET ${offset}
     `;
 
     return invoices.rows;
@@ -109,7 +108,7 @@ export async function fetchFilteredInvoices(query: string, currentPage: number) 
   }
 }
 
-export async function fetchInvoicesPages(query: string) {
+export async function fetchInvoicesPages(query: string, itemsPerPage = 6) {
   try {
     const count = await sql`SELECT COUNT(*)
     FROM invoices
@@ -122,7 +121,7 @@ export async function fetchInvoicesPages(query: string) {
       invoices.status ILIKE ${`%${query}%`}
   `;
 
-    const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
+    const totalPages = Math.ceil(Number(count.rows[0].count) / itemsPerPage);
     return totalPages;
   } catch (error) {
     console.error("Database Error:", error);
