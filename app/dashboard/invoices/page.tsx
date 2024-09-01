@@ -1,5 +1,6 @@
 // Node modules
 import { Suspense } from "react";
+import { Metadata } from "next";
 
 // Project fles
 import Pagination from "@/app/ui/invoices/pagination";
@@ -9,6 +10,10 @@ import { CreateInvoice } from "@/app/ui/invoices/buttons";
 import { lusitana } from "@/app/ui/fonts";
 import { InvoicesTableSkeleton } from "@/app/ui/skeletons";
 import { fetchInvoicesPages } from "@/app/lib/data";
+
+export const metadata: Metadata = {
+  title: "Invoices",
+};
 
 // Refactor with Props
 interface Props {

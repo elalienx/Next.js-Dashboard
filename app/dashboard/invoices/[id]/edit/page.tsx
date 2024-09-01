@@ -1,7 +1,15 @@
+// Node modules
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+
+// Project files
 import EditForm from "@/app/ui/invoices/edit-form";
 import Breadcrumbs from "@/app/ui/invoices/breadcrumbs";
 import { fetchInvoiceById, fetchCustomers } from "@/app/lib/data";
-import { notFound } from "next/navigation";
+
+export const metadata: Metadata = {
+  title: "Edit invoice",
+};
 
 interface Props {
   params: {

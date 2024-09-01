@@ -1,6 +1,13 @@
+// Node modules
+import { Metadata } from "next";
+
 // Project files
 import AcmeLogo from "@/app/ui/acme-logo";
 import LoginForm from "@/app/ui/login-form";
+
+export const metadata: Metadata = {
+  title: "Login | Acme Dashboard",
+};
 
 export default function LoginPage() {
   return (

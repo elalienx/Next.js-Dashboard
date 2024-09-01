@@ -1,6 +1,15 @@
+// Node modules
+import { Metadata } from "next";
+
 // Project files
 import "@/app/ui/global.css";
 import { inter } from "@/app/ui/fonts";
+
+export const metadata: Metadata = {
+  title: "Acme Dashboard",
+  description: "The official Next.js Course Dashboard, built with App Router.",
+  metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
+};
 
 /**
  * One benefit of using layouts in Next.js is that on navigation,
